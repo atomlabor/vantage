@@ -5,7 +5,7 @@
   "type": "package",
   "pebble": {
     "displayName": "VANTAGE v3",
-    "uuid": "2aec2ede-ac92-4ad5-a80f-fd71e07bd5af",
+    "uuid": "61f8a425-9b3d-4e2a-8f7c-1d5b9a3e6c0f",
     "sdkVersion": "3",
     "enableMultiJS": false,
     "targetPlatforms": [
