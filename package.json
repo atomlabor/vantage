@@ -1,0 +1,36 @@
+{
+  "name": "VANTAGE",
+  "version": "1.0.0",
+  "author": "Atomlabor",
+  "type": "package",
+  "pebble": {
+    "displayName": "VANTAGE v3",
+    "uuid": "2aec2ede-ac92-4ad5-a80f-fd71e07bd5af",
+    "sdkVersion": "3",
+    "enableMultiJS": false,
+    "targetPlatforms": [
+      "emery"
+    ],
+    "watchapp": {
+      "watchface": true,
+      "menuIcon": "IMAGE_MENU_ICON"
+    },
+    "capabilities": [],
+    "resources": {
+      "media": [
+        {
+          "file": "images/MOON.png",
+          "name": "MOON",
+          "type": "bitmap"
+        },
+        {
+          "type": "bitmap",
+          "name": "IMAGE_MENU_ICON",
+          "menuIcon": true,
+          "file": "images/vantage_icon.png"
+        }
+      ]
+    }
+  },
+  "dependencies": {}
+}
