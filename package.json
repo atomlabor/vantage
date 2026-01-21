@@ -4,7 +4,7 @@
   "author": "Atomlabor",
   "type": "package",
   "pebble": {
-    "displayName": "VANTAGE v3",
+    "displayName": "VANTAGE v1",
     "uuid": "61f8a425-9b3d-4e2a-8f7c-1d5b9a3e6c0f",
     "sdkVersion": "3",
     "enableMultiJS": false,
