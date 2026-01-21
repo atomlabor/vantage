@@ -1,5 +1,5 @@
 # VANTAGE (Emery Edition)
-**Version:** 3.0 (Golden Build)
+**Version:** 1.1 
 **Platform:** Pebble Time 2 (Emery)
 **Author:** Atomlabor | Atomlabor.de
 
