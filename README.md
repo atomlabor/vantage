@@ -3,7 +3,7 @@
 **Platform:** Pebble Time 2 (Emery)
 **Author:** Atomlabor | Atomlabor.de
 
-![AtomWave Header](https://raw.githubusercontent.com/atomlabor/vantage/main/VANTAGE_WATCHFACE.png)
+![vantage Header](https://raw.githubusercontent.com/atomlabor/vantage/main/VANTAGE_WATCHFACE.png)
 
 ## Overview
 VANTAGE is a high-precision, native C watchface designed exclusively for the Pebble Time 2 (Emery). It features a sophisticated analog design with "Midnight Green" aesthetics and deep system integration.
@@ -15,6 +15,9 @@ Unlike standard watchfaces, VANTAGE utilizes the `UnobstructedAreaService` to ma
 * **Border:** Cadet Blue (Day) / Black (Night)
 * **Hands:** Red (Hour), White (Minute), White (Subdials)
 * **Typography:** LECO 32 (Indices), Gothic 14 Bold (Labels)
+
+![vantage Header](https://raw.githubusercontent.com/atomlabor/vantage/main/pebble_screenshot.png)
+
 
 ## Key Features
 
