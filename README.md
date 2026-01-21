@@ -16,12 +16,13 @@ Unlike standard watchfaces, VANTAGE utilizes the `UnobstructedAreaService` to ma
 * **Hands:** Red (Hour), White (Minute), White (Subdials)
 * **Typography:** LECO 32 (Indices), Gothic 14 Bold (Labels)
 
+
 ![vantage Header](https://raw.githubusercontent.com/atomlabor/vantage/main/pebble_screenshot.png)
 
 
 ## Key Features
 
-### 1. Adaptive Layout (Apple-Level Integration)
+### 1. Adaptive Layout 
 The watchface listens to the Pebble OS `UnobstructedAreaService`. When a timeline pin or notification (Quick View) slides up from the bottom:
 * The entire face (center point, subdials, hands) slides up smoothly.
 * Elements that would overlap or be cut off (like the Moon Phase) are automatically hidden.
