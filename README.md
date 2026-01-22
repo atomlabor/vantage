@@ -5,6 +5,9 @@
 
 ![vantage Header](https://raw.githubusercontent.com/atomlabor/vantage/main/VANTAGE_WATCHFACE.png)
 
+# SHOPLINK:
+https://apps.rebble.io/en_US/application/6970a55f04726500096d9975 
+
 ## Overview
 VANTAGE is a high-precision, native C watchface designed exclusively for the Pebble Time 2 (Emery). It features a sophisticated analog design with "Midnight Green" aesthetics and deep system integration.
 
