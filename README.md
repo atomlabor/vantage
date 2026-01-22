@@ -5,7 +5,7 @@
 
 ![vantage Header](https://raw.githubusercontent.com/atomlabor/vantage/main/VANTAGE_WATCHFACE.png)
 
-# SHOPLINK:
+## Rebble / Pebble Shoplink:
 https://apps.rebble.io/en_US/application/6970a55f04726500096d9975 
 
 ## Overview
