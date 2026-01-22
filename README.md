@@ -1,4 +1,4 @@
-# VANTAGE (Emery Edition)
+# VANTAGE (Emery (obelix) Edition)
 **Version:** 1.0 
 **Platform:** Pebble Time 2 (Emery)
 **Author:** Atomlabor | Atomlabor.de
