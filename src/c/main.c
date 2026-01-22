@@ -1,7 +1,8 @@
 #include <pebble.h>
 
 // --------------------------------------------------------------------------
-// VANTAGE v1 (Emery 200x228)
+// VANTAGE v1.1.0 (Emery 200x228)
+// Features: 
 // Atomlabor.de Watchface
 // --------------------------------------------------------------------------
 
@@ -32,6 +33,7 @@ static void update_layout(GRect bounds) {
     if (bounds.size.w == 0 || bounds.size.h == 0) return;
     
     c_main = GPoint(bounds.origin.x + (bounds.size.w / 2), bounds.origin.y + (bounds.size.h / 2));
+    
     c_date = GPoint(c_main.x - 50, c_main.y);
     c_day  = GPoint(c_main.x + 50, c_main.y);
     c_moon = GPoint(c_main.x, c_main.y + 68); 
@@ -48,6 +50,7 @@ static void unobstructed_area_change_proc(AnimationProgress progress, void *cont
     if (s_hands_layer) layer_mark_dirty(s_hands_layer);
 }
 
+
 static void battery_timer_callback(void *data) {
     s_show_battery = false;
     if (s_bg_layer) layer_mark_dirty(s_bg_layer);
@@ -62,10 +65,9 @@ static void tap_handler(AccelAxisType axis, int32_t direction) {
     s_battery_timer = app_timer_register(5000, battery_timer_callback, NULL);
 }
 
-
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
     if (s_hands_layer) layer_mark_dirty(s_hands_layer);
-    
+
     if (units_changed & HOUR_UNIT) {
         if (s_bg_layer) layer_mark_dirty(s_bg_layer);
     }
@@ -96,7 +98,7 @@ static void bg_update_proc(Layer *layer, GContext *ctx) {
     time_t now = time(NULL); struct tm *t = localtime(&now);
     
     GRect full = layer_get_bounds(layer);
-    GRect safe = layer_get_unobstructed_bounds(layer);
+    GRect safe = layer_get_unobstructed_bounds(layer); 
 
     bool is_night = (t->tm_hour >= 22 || t->tm_hour < 6);
     GColor c_bg = is_night ? COL_NIGHT : COL_BG;
@@ -109,9 +111,17 @@ static void bg_update_proc(Layer *layer, GContext *ctx) {
     graphics_fill_rect(ctx, GRect(2, safe.origin.y + 2, safe.size.w - 4, safe.size.h - 4), 18, GCornersAll);
     
     if (s_bmp_moon && safe.size.h > 160) {
-        const uint32_t lunation = 2551443; 
-        uint32_t delta = (uint32_t)now - 1737229920; 
-        int32_t angle = ((delta % lunation) * (TRIG_MAX_ANGLE / 2)) / lunation;
+
+        const uint32_t lunation_seconds = 2551443; 
+
+        const time_t new_moon_anchor = 1704974220; 
+
+        time_t current_time = now;
+        if (current_time < new_moon_anchor) current_time = new_moon_anchor; 
+        time_t delta = current_time - new_moon_anchor;
+
+        int32_t angle = ((delta % lunation_seconds) * (TRIG_MAX_ANGLE / 2)) / lunation_seconds;
+        
         graphics_context_set_compositing_mode(ctx, GCompOpSet);
         graphics_draw_rotated_bitmap(ctx, s_bmp_moon, GPoint(35, 35), angle, c_moon);
 
@@ -143,6 +153,7 @@ static void bg_update_proc(Layer *layer, GContext *ctx) {
 
     graphics_context_set_fill_color(ctx, COL_METAL);
     graphics_context_set_text_color(ctx, COL_METAL);
+    
     for (int i = 0; i < 31; i++) {
         int32_t a = (TRIG_MAX_ANGLE * i) / 31;
         GPoint p = { .x = c_date.x + (sin_lookup(a) * 28 / TRIG_MAX_RATIO), .y = c_date.y - (cos_lookup(a) * 28 / TRIG_MAX_RATIO) };
@@ -151,6 +162,7 @@ static void bg_update_proc(Layer *layer, GContext *ctx) {
         if (i == 10) draw_arc_label(ctx, c_date, 40, (10 * 360) / 31, "10");
         if (i == 20) draw_arc_label(ctx, c_date, 40, (20 * 360) / 31, "20");
     }
+
     char* days[] = {"S", "M", "D", "M", "D", "F", "S"};
     for (int i = 0; i < 7; i++) draw_arc_label(ctx, c_day, 22, (i * 360) / 7, days[i]);
 }
@@ -177,6 +189,7 @@ static void hands_update_proc(Layer *layer, GContext *ctx) {
 
 static void main_window_load(Window *window) {
     Layer *root = window_get_root_layer(window);
+    
     update_layout(layer_get_unobstructed_bounds(root));
 
     static const GPoint P_HOUR[] = {{-5, 12}, {-5, -60}, {-2, -63}, {2, -63}, {5, -60}, {5, 12}};
