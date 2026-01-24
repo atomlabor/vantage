@@ -27,7 +27,7 @@
           "type": "bitmap",
           "name": "IMAGE_MENU_ICON",
           "menuIcon": true,
-          "file": "images/vantage_icon.png"
+          "file": "images/menu_icon.png"
         }
       ]
     }
