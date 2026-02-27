@@ -1,33 +1,26 @@
 {
   "name": "VANTAGE",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "author": "Atomlabor",
   "type": "package",
   "pebble": {
-    "displayName": "VANTAGE v1",
+    "displayName": "VANTAGE v2",
     "uuid": "61f8a425-9b3d-4e2a-8f7c-1d5b9a3e6c0f",
     "sdkVersion": "3",
     "enableMultiJS": false,
-    "targetPlatforms": [
-      "emery"
-    ],
+   "targetPlatforms": ["aplite", "basalt", "diorite", "emery", "flint"],
     "watchapp": {
       "watchface": true,
       "menuIcon": "IMAGE_MENU_ICON"
     },
     "capabilities": [],
-    "resources": {
+"resources": {
       "media": [
-        {
-          "file": "images/MOON.png",
-          "name": "MOON",
-          "type": "bitmap"
-        },
         {
           "type": "bitmap",
           "name": "IMAGE_MENU_ICON",
           "menuIcon": true,
-          "file": "images/menu_icon.png"
+          "file": "images/vantage_icon.png"
         }
       ]
     }
