@@ -5,7 +5,7 @@
 // atomlabor.de Watchface
 // --------------------------------------------------------------------------
 
-#define TEST_NIGHTMODE 1 
+#define TEST_NIGHTMODE 0 
 
 static Window *s_window;
 static Layer *s_bg_layer, *s_hands_layer;
