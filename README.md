@@ -1,6 +1,6 @@
 # VANTAGE (Cross-Platform Edition)
 
-**Version:** 2.0.12  
+**Version:** 2.0.0  
 **Platform:** Pebble Time 2 (Emery)  
 **Platform:** Pebble Time (Basalt)  
 **Platform:** Pebble 2 (Diorite)  
